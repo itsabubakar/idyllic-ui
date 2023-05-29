@@ -22,12 +22,21 @@ export const Secondary = Template.bind({})
 
 export const Disabled = Template.bind({})
 
+export const Loading = Template.bind({})
+
 
 
 Secondary.args = {
     variant: 'secondary',
     children: 'Secondary Button',
-    size: '24px',
+    size: 'sm',
+}
+
+Loading.args = {
+    variant: 'secondary',
+    children: 'Loading Button',
+    size: 'md',
+    loading: true
 }
 
 Disabled.args = {
