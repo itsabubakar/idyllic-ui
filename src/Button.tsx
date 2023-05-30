@@ -20,6 +20,7 @@ const StyledButton = styled.button<Props>`
     }
 }
 border: 1px solid #2e2e2e;
+height: 40px;
 background: none;
 color: #2e2e2e;
 min-width: 80px;
