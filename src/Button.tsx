@@ -2,7 +2,7 @@ import React, { HTMLAttributes, ReactNode } from 'react'
 import styled from "styled-components";
 
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     variant: 'primary' | 'secondary';
     size: string;
@@ -10,7 +10,7 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
     loading?: boolean;
 }
 
-const StyledButton = styled.button<Props>` 
+const StyledButton = styled.button<ButtonProps>` 
 @keyframes spin-anim {
     0% {
         transform: rotate(0deg);
@@ -59,7 +59,7 @@ const Spinner = styled.div`
     animation: spin-anim 1.2s linear infinite;
 `
 
-export const Button: React.FC<Props> = ({
+export const Button: React.FC<ButtonProps> = ({
     size,
     disabled,
     children,
