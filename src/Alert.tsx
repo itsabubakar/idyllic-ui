@@ -60,7 +60,7 @@ export const Alert: React.FC<AlertProp> = ({
 
         {/* success #e2e8f0  #38a169*/}
         {
-            status == 'success' || status == '' && <div style={{
+            status == 'success' && <div style={{
                 height: '30px',
                 width: '45px',
                 marginLeft: '-10px',

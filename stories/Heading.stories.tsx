@@ -19,7 +19,7 @@ export const H3 = Template.bind({})
 
 H1.args = {
     as: 'h1',
-    text: 'H1 Tag'
+    children: 'H1 Tag'
 }
 
 H2.args = {

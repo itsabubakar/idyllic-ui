@@ -34,6 +34,7 @@ export const FormInput: React.FC<Props> = ({
     label,
     children,
     error,
+    placeholder,
     ...props
 }) => {
     return (
@@ -58,7 +59,7 @@ export const FormInput: React.FC<Props> = ({
 
                 }
                 <StyledInput
-                    placeholder='name'
+                    placeholder={placeholder}
                     type={type}
                     {...props}
                 />

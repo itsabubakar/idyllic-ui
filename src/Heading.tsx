@@ -1,11 +1,11 @@
-import React, { HTMLAttributes } from 'react'
+import React, { HTMLAttributes, ReactNode } from 'react'
 import styled from "styled-components";
 
 
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
-    text: string,
     as: string,
     size?: string,
+    children: ReactNode,
 }
 
 const H1 = styled.h1`
@@ -30,7 +30,7 @@ const H6 = styled.h6`
 
 
 export const Heading: React.FC<HeadingProps> = ({
-    text,
+    children,
     as,
     size,
     ...props
@@ -40,46 +40,45 @@ export const Heading: React.FC<HeadingProps> = ({
 
             {/*Empty as defaults to H1  */}
             {as === '' && <H1  {...props}>
-                {text}
-                <h1></h1>
+                {children}
             </H1>
             }
 
             {as === 'h1' && <H1 style={{
                 fontSize: size && size,
             }} {...props}>
-                {text}
+                {children}
             </H1>
             }
             {as === 'h2' && <H2 style={{
                 fontSize: size && size,
             }} {...props}>
-                {text}
+                {children}
             </H2>
             }
 
             {as === 'h3' && <H3 style={{
                 fontSize: size && size,
             }} {...props}>
-                {text}
+                {children}
             </H3>
             }
             {as === 'h4' && <H4 style={{
                 fontSize: size && size,
             }} {...props}>
-                {text}
+                {children}
             </H4>
             }
             {as === 'h5' && <H5 style={{
                 fontSize: size && size,
             }} {...props}>
-                {text}
+                {children}
             </H5>
             }
             {as === 'h6' && <H6 style={{
                 fontSize: size && size,
             }} {...props}>
-                {text}
+                {children}
             </H6>
             }
         </>
