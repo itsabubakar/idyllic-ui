@@ -29,7 +29,7 @@ const H6 = styled.h6`
 
 
 
-export const Heading: React.FC<HeadingProps> = ({
+export const Header: React.FC<HeadingProps> = ({
     children,
     as,
     size,

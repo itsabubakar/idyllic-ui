@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { Heading, HeadingProps } from '../src/Heading'
+import { Header, HeadingProps } from '../src/Header'
 
 const meta: Meta = {
     title: 'Headings',
-    component: Heading,
+    component: Header,
 }
 
 export default meta
