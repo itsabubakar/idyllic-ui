@@ -7,6 +7,7 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
     type: string;
     error?: boolean;
     label?: string;
+    padding?: number,
 }
 
 
@@ -59,7 +60,7 @@ export const FormInput: React.FC<Props> = ({
 
                 }
                 <StyledInput
-                    placeholder={placeholder}
+                    placeholder={placeholder ? placeholder : 'Placeholder'}
                     type={type}
                     {...props}
                 />

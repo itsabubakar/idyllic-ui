@@ -9,7 +9,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<HeadingProps> = (args) => <Heading {...args} />
+const Template: Story<HeadingProps> = (args) => <Header {...args} />
 
 export const H1 = Template.bind({})
 
