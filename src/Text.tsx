@@ -22,7 +22,6 @@ const TextConc = styled.p<TextProps>`
     letter-spacing: ${({ lh }) => (lh ? lh : "0")};
     text-transform: ${({ tt }) => (tt ? tt : "none")};
     text-decoration: ${({ td }) => (td ? td : "none")};
-    
 `;
 
 export const Text: React.FC<TextProps> = ({
