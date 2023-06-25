@@ -7,7 +7,7 @@ const meta: Meta = {
     component: TailwindBtn,
     argTypes: {
         children: {
-            defaultValue: 'Default'
+            defaultValue: 'Light'
         }
     }
 }
@@ -16,5 +16,26 @@ export default meta
 
 const Template: Story<ButtonProps> = (args) => <TailwindBtn {...args} />
 
-export const Default = Template.bind({})
+export const Light = Template.bind({})
+export const Dark = Template.bind({})
+export const LightOutline = Template.bind({})
+export const DarkOutline = Template.bind({})
+export const Disabled = Template.bind({})
 
+Dark.args = {
+    children: 'Dark',
+}
+
+LightOutline.args = {
+    children: 'Light Outline',
+}
+
+DarkOutline.args = {
+    children: 'Dark Outline',
+    type: 'dark-outline',
+}
+
+Disabled.args = {
+    children: 'Disabled',
+
+}
