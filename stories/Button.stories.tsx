@@ -7,7 +7,7 @@ const meta: Meta = {
     component: Button,
     argTypes: {
         children: {
-            defaultValue: 'Default'
+            defaultValue: 'Light'
         }
     }
 }
@@ -16,30 +16,28 @@ export default meta
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
-export const Default = Template.bind({})
-
-export const Secondary = Template.bind({})
-
+export const Light = Template.bind({})
+export const Dark = Template.bind({})
+export const LightOutline = Template.bind({})
+export const DarkOutline = Template.bind({})
 export const Disabled = Template.bind({})
 
-export const Loading = Template.bind({})
-
-
-
-Secondary.args = {
-    variant: 'secondary',
-    children: 'Secondary Button',
-    size: 'sm',
+Dark.args = {
+    children: 'Dark',
+    type: 'dark'
 }
 
-Loading.args = {
-    variant: 'secondary',
-    children: 'Loading Button',
-    size: 'md',
-    loading: true
+LightOutline.args = {
+    children: 'Light Outline',
+    type: 'light-outline',
+}
+
+DarkOutline.args = {
+    children: 'Dark Outline',
+    type: 'dark-outline',
 }
 
 Disabled.args = {
-    children: 'Disabled Button',
-    disabled: true
+    children: 'Disabled',
+    disabled: true,
 }

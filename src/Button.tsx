@@ -1,85 +1,48 @@
-import React, { HTMLAttributes, ReactNode } from 'react'
-import styled from "styled-components";
+import React, { HTMLAttributes } from 'react'
 
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    children: ReactNode;
-    variant: 'primary' | 'secondary';
-    size: string;
+    children: JSX.Element;
+    cn?: string;
+    type?: string;
     disabled?: boolean;
-    loading?: boolean;
 }
 
-const StyledButton = styled.button<ButtonProps>` 
-@keyframes spin-anim {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-border: 1px solid #2e2e2e;
-height: 40px;
-background: none;
-color: #2e2e2e;
-min-width: 80px;
-  line-height: 1;
-  font-size: 15px;
-  cursor: pointer;
-  display: inline-block;
-  padding: ${(props) =>
-        props.size === "sm"
-            ? "7px 8px"
-            : props.size === "md"
-                ? "8px 10px"
-                : "10px 14px"};
-  
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  &:hover {
-    color: #fff;
-    border: ${(props) => (props.variant == 'primary' ? "1px solid #2e2e2e" : "1px solid #727272")};
-    background-color: ${(props) => (props.variant == 'primary' ? "#2e2e2e" : "#727272")};
-  }
-`;
 
-const Loading = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-`
 
-const Spinner = styled.div`
-    width: 16px;
-    height: 16px;
-    border: 2px solid;
-    border-color: #5a5a5a transparent #5a5a5a transparent;
-    border-radius: 50%;
-    animation: spin-anim 1.2s linear infinite;
-`
 
 export const Button: React.FC<ButtonProps> = ({
-    size,
-    disabled,
     children,
-    variant = 'primary',
-    loading,
+    cn,
+    type,
+    disabled,
     ...props
 }) => {
     return (
-        <StyledButton
-            variant={variant}
-            type="button"
-            disabled={disabled}
-            size={size}
-            {...props}>
-            {loading ? <>
-                <Loading>
-                    <Spinner />
-                </Loading>
-            </> : <>{children}</>}
+        <>
+            {
+                type == 'light' ?
+                    <button type='button' {...props} className={`inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600  transition duration-150 ease-in-out  border border-gray-200 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none opacity-50 ${disabled ? 'cursor-not-allowed op' : ''}`}>
+                        {children}
+                    </button> :
+                    type == 'dark' ?
+                        <button type='button' className={`inline-flex items-center justify-center px-4 py-2 font-medium tracking-wide leading-6 text-white transition duration-150 ease-in-out bg-gray-900 rounded hover:bg-gray-800 focus:shadow-outline focus:outline-none  ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}>
+                            {children}
+                        </button> :
+                        type == 'light-outline' ?
+                            <button type='button' {...props} className={`inline-flex  items-center justify-center rounded border-2 border-info  px-4 py-2 text-base text-gray-600 font-medium  leading-6 transition duration-150 ease-in-out hover:border-info-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-info-600 focus:border-info-600 focus:text-info-600 focus:outline-none focus:ring-0 active:border-info-700 active:text-info-700  ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}>
+                                {children}
+                            </button> :
+                            type == 'dark-outline' ?
+                                <button type='button' {...props} className={`inline-flex rounded border-2 border-neutral-800 px-4 py-2 text-base text-neutral-800 font-medium  leading-6  transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-800 focus:border-neutral-800 focus:text-neutral-800 focus:outline-none focus:ring-0 active:border-neutral-900 active:text-neutral-900  ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}>
+                                    {children}
+                                </button> :
 
-        </StyledButton>
+                                <button type='button' {...props} className={`inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600  transition duration-150 ease-in-out  border border-gray-200 rounded shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none ${disabled ? 'cursor-not-allowed opacity-50' : ''}`}>
+                                    {children}
+                                </button>
+            }
+
+        </>
     )
 }
