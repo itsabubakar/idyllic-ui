@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from 'react'
 
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    children: JSX.Element;
+    children: JSX.Element | string | number;
     cn?: string;
     type?: string;
     disabled?: boolean;
