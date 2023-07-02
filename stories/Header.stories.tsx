@@ -24,9 +24,9 @@ H1.args = {
 
 H2.args = {
     as: 'h2',
-    text: 'H2 Tag'
+    children: 'H1 Tag'
 }
 H3.args = {
     as: 'h3',
-    text: 'H3 tag'
+    children: 'H1 Tag'
 }

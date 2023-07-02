@@ -1,15 +1,15 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import { FormInput, Props } from '../src/FormControl'
+import { Input, InputProps } from '../src/Input'
 
 const meta: Meta = {
-    title: 'FormControl',
-    component: FormInput,
+    title: 'Input',
+    component: Input,
 }
 
 export default meta
 
-const Template: Story<Props> = (args) => <FormInput {...args} />
+const Template: Story<InputProps> = (args) => <Input {...args} />
 
 export const Default = Template.bind({})
 
@@ -19,7 +19,6 @@ export const Email = Template.bind({})
 
 export const Error = Template.bind({})
 
-export const Search = Template.bind({})
 
 Default.args = {
     placeholder: 'Placeholder',
@@ -29,7 +28,8 @@ Default.args = {
 Password.args = {
     placeholder: 'Enter password',
     label: 'Password',
-    type: 'password'
+    type: 'password',
+    width: 'w-72',
 }
 
 Email.args = {
@@ -42,9 +42,4 @@ Error.args = {
     placeholder: 'Error',
     label: 'Error',
     error: true,
-}
-
-Search.args = {
-    placeholder: 'Search',
-    type: 'search'
 }
