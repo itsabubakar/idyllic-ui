@@ -7,12 +7,12 @@ export interface InputProps {
     error?: boolean,
     width?: string,
     height?: string,
-    cn?: string
+    className?: string
     // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 export const Input: React.FC<InputProps> = ({
-    cn,
+    className,
     placeholder,
     label,
     type,
@@ -22,7 +22,7 @@ export const Input: React.FC<InputProps> = ({
 
 }) => {
     return (
-        <div className={`${width ? `${width}` : "w-32"} ${height ? `${height}` : "h-10"} ${cn ? `${cn}` : ""}`}>
+        <div className={`${width ? `${width}` : "w-32"} ${height ? `${height}` : "h-10"} ${className ? `${className}` : ""}`}>
             <div className="relative w-full h-full">
                 <input
                     type={type}
